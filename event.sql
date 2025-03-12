@@ -1,0 +1,10 @@
+DELIMITER $$
+CREATE EVENT delete_retires
+ON SCHEDULE EVERY 1 MINUTE
+DO
+BEGIN
+	DELETE
+    FROM employee_demographics
+    WHERE age >=60;
+END $$
+DELIMITER ;
